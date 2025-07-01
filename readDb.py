@@ -8,8 +8,8 @@ Built-in globals will set the parameters to:
 import csv, sqlite3, json, os, sys, uuid
 
 # Constants for easy running
-IN_DB = r'./a084e65cd9403d813e8ec667ca329a63.sqlite'
-OUT_DIR = r'./out'
+IN_DB = r'C:\Users\Continua Carlton\Desktop\a084e65cd9403d813e8ec667ca329a63.sqlite
+OUT_DIR = r'C:\Users\Continua Carlton\Desktop\out'
 
 def shape2WKT(in_shape_data):
     # Read coordinates and return WKT
@@ -100,7 +100,7 @@ def readS123db(inDB=IN_DB):
     # 2 - Sent
     # 3 - Submission Error
     # 4 - Inbox
-    for row in cur.execute('SELECT name, data, status from Surveys where status = 1 or status = 3'):
+    for row in cur.execute('SELECT name, data, status from Surveys where status = 0 or status = 1 status = 2 or status = 3 or status = 4'):
         # print(row)
         print ('-----------------')
         surveyName = row[0]
